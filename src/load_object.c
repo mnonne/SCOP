@@ -6,69 +6,174 @@
 
 float       *create_array(void)
 {
-	float   arr[216] = {
-			-1.0f,-1.0f,-1.0f, 0.583f, 0.771f, 0.014f,
-			-1.0f,-1.0f, 1.0f, 0.609f, 0.115f, 0.436f,
-			-1.0f, 1.0f, 1.0f, 0.327f, 0.483f, 0.844f,
-			1.0f, 1.0f,-1.0f, 0.822f, 0.569f, 0.201f,
-			-1.0f,-1.0f,-1.0f, 0.435f, 0.602f, 0.223f,
-			-1.0f, 1.0f,-1.0f, 0.310f, 0.747f, 0.185f,
-			1.0f,-1.0f, 1.0f, 0.597f, 0.770f, 0.761f,
-			-1.0f,-1.0f,-1.0f, 0.559f, 0.436f, 0.730f,
-			1.0f,-1.0f,-1.0f, 0.359f, 0.583f, 0.152f,
-			1.0f, 1.0f,-1.0f, 0.483f, 0.596f, 0.789f,
-			1.0f,-1.0f,-1.0f, 0.559f, 0.861f, 0.639f,
-			-1.0f,-1.0f,-1.0f, 0.195f, 0.548f, 0.859f,
-			-1.0f,-1.0f,-1.0f, 0.014f, 0.184f, 0.576f,
-			-1.0f, 1.0f, 1.0f, 0.771f, 0.328f, 0.970f,
-			-1.0f, 1.0f,-1.0f, 0.406f, 0.615f, 0.116f,
-			1.0f,-1.0f, 1.0f, 0.676f, 0.977f, 0.133f,
-			-1.0f,-1.0f, 1.0f, 0.971f, 0.572f, 0.833f,
-			-1.0f,-1.0f,-1.0f, 0.140f, 0.616f, 0.489f,
-			-1.0f, 1.0f, 1.0f, 0.997f, 0.513f, 0.064f,
-			-1.0f,-1.0f, 1.0f, 0.945f, 0.719f, 0.592f,
-			1.0f,-1.0f, 1.0f, 0.543f, 0.021f, 0.978f,
-			1.0f, 1.0f, 1.0f, 0.279f, 0.317f, 0.505f,
-			1.0f,-1.0f,-1.0f, 0.167f, 0.620f, 0.077f,
-			1.0f, 1.0f,-1.0f, 0.347f, 0.857f, 0.137f,
-			1.0f,-1.0f,-1.0f, 0.055f, 0.953f, 0.042f,
-			1.0f, 1.0f, 1.0f, 0.714f, 0.505f, 0.345f,
-			1.0f,-1.0f, 1.0f, 0.783f, 0.290f, 0.734f,
-			1.0f, 1.0f, 1.0f, 0.722f, 0.645f, 0.174f,
-			1.0f, 1.0f,-1.0f, 0.302f, 0.455f, 0.848f,
-			-1.0f, 1.0f,-1.0f, 0.225f, 0.587f, 0.040f,
-			1.0f, 1.0f, 1.0f, 0.517f, 0.713f, 0.338f,
-			-1.0f, 1.0f,-1.0f, 0.053f, 0.959f, 0.120f,
-			-1.0f, 1.0f, 1.0f, 0.393f, 0.621f, 0.362f,
-			1.0f, 1.0f, 1.0f, 0.673f, 0.211f, 0.457f,
-			-1.0f, 1.0f, 1.0f, 0.820f, 0.883f, 0.371f,
-			1.0f,-1.0f, 1.0f, 0.982f, 0.099f, 0.879f
+	float   arr[108] = {
+				-1.0f,-1.0f,-1.0f, // Треугольник 1 : начало
+				-1.0f,-1.0f, 1.0f,
+				-1.0f, 1.0f, 1.0f, // Треугольник 1 : конец
+				 1.0f, 1.0f,-1.0f, // Треугольник 2 : начало
+				-1.0f,-1.0f,-1.0f,
+				-1.0f, 1.0f,-1.0f, // Треугольник 2 : конец
+				 1.0f,-1.0f, 1.0f,
+				-1.0f,-1.0f,-1.0f,
+				 1.0f,-1.0f,-1.0f,
+				 1.0f, 1.0f,-1.0f,
+				 1.0f,-1.0f,-1.0f,
+				-1.0f,-1.0f,-1.0f,
+				-1.0f,-1.0f,-1.0f,
+				-1.0f, 1.0f, 1.0f,
+				-1.0f, 1.0f,-1.0f,
+				 1.0f,-1.0f, 1.0f,
+				-1.0f,-1.0f, 1.0f,
+				-1.0f,-1.0f,-1.0f,
+				-1.0f, 1.0f, 1.0f,
+				-1.0f,-1.0f, 1.0f,
+				 1.0f,-1.0f, 1.0f,
+				 1.0f, 1.0f, 1.0f,
+				 1.0f,-1.0f,-1.0f,
+				 1.0f, 1.0f,-1.0f,
+				 1.0f,-1.0f,-1.0f,
+				 1.0f, 1.0f, 1.0f,
+				 1.0f,-1.0f, 1.0f,
+				 1.0f, 1.0f, 1.0f,
+				 1.0f, 1.0f,-1.0f,
+				-1.0f, 1.0f,-1.0f,
+				 1.0f, 1.0f, 1.0f,
+				-1.0f, 1.0f,-1.0f,
+				-1.0f, 1.0f, 1.0f,
+				 1.0f, 1.0f, 1.0f,
+				-1.0f, 1.0f, 1.0f,
+				 1.0f,-1.0f, 1.0f
 	};
 	float *ptr = (float *)malloc(sizeof(float) * 216);
 	ft_memcpy(ptr, arr, sizeof(float) * 216);
 	return (ptr);
 }
 
-void	*load_object(t_obj *obj)
+
+static int	ft_instr(char ch, char *str)
 {
-//	t_obj	*obj;
+	while (str && *str && *str != ch)
+		++str;
+	return (*str == ch);
+}
+
+static char	*skip_blank(const char *str)
+{
+	int i;
+
+	i = 0;
+	while (ft_instr(str[i], " \t\n\v\r\f"))
+		i++;
+	if (ft_instr(str[i], "+-") || ft_isdigit(str[i]))
+		return ((char *)&str[i]);
+	else
+		return (0);
+}
+
+float		ft_atof(const char *str)
+{
+	char	*p;
+	int		i;
+	float	num;
+	float	tmp;
+
+	if (!(p = skip_blank(str)))
+		return (0);
+	num = 0;
+	i = ((*p == '-') || (*p == '+')) ? 0 : -1;
+	while (p[++i] != '.' && p[i] != 0 && ft_isdigit(p[i]))
+		num = num * 10 + (int)(p[i] - '0');
+	tmp = 1;
+	while (ft_isdigit(p[++i]))
+	{
+		tmp *= 10;
+		num += (float)(p[i] - '0') / (float)tmp;
+	}
+	return ((*p == '-') ? -num : num);
+}
+
+float		*vector_buffer(float *old, size_t *nb, char *str)
+{
+	float 	*new;
+	char 	**arr;
+
+	new = (float *)realloc(old, sizeof(float) * 3);
+//	free(old);
+	ft_memcpy(new, old, *nb);
+	arr = ft_strsplit(str, ' ');
+	while (*arr != NULL)
+	{
+		new[(*nb)++] = ft_atof(*arr);
+		free(*arr);
+		arr++;
+	}
+	free(arr - 3);
+//	for (size_t i = 0; i < *nb; i++)
+//	{
+//		printf("%.4f\n", new[i]);
+//	}
+	printf("\n");
+	return (new);
+}
+
+//float 		*create_array(const char *file)
+//{
+//	int 	fd;
+//	size_t 	vert_count;
+//	float 	*vert_array = NULL;
+//	float 	*tmp_v_buff;
+//	char 	*tmp_line;
 //
-//	if(!(obj = (t_obj *)malloc(sizeof(t_obj))))
-//		escape("Malloc problem");
+//	vert_count = 0;
+//	tmp_v_buff = NULL;
+//	fd = open(file, O_RDONLY);
+//	while (get_next_line(fd, &tmp_line) > 0)
+//	{
+//		if (*tmp_line == 'v')
+//		{
+//			tmp_v_buff = vector_buffer(tmp_v_buff, &vert_count, tmp_line + 2);
+//		}
+//		free(tmp_line);
+//	}
+//	close(fd);
+//	return (vert_array);
+//}
+
+float 	*create_color_array(int size)
+{
+	float 	*arr;
+	int 	i;
+
+	arr = (float *)malloc(sizeof(float) * size);
+	i = 0;
+	while (i < size)
+	{
+		arr[i] = 1.0f / (i + 1) * 10;
+		arr[i + 1] = 1.0f / (i + 2) * 10;
+		arr[i + 2] = 1.0f / (i + 3) * 10;
+//		printf("%f %f %f\n", arr[i], arr[i + 1], arr[i + 2]);
+		i += 3;
+	}
+	return (arr);
+}
+
+void	load_object(t_obj *obj)
+{
+
 	obj->vertex_data = create_array();
+	obj->color_data = create_color_array(108);
+//	obj->vertex_data = create_array("../resources/objects/42.obj");
 	glGenVertexArrays(1, &obj->vao);
 	glBindVertexArray(obj->vao);
 	glGenBuffers(2, obj->vbo);
 	glBindBuffer(GL_ARRAY_BUFFER, obj->vbo[0]);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * 216, obj->vertex_data, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * 108, obj->vertex_data, GL_STATIC_DRAW);
 	glEnableVertexAttribArray(0);
 	glBindBuffer(GL_ARRAY_BUFFER, obj->vbo[0]);
-	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void *)0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, (void *)0);
 	glBindBuffer(GL_ARRAY_BUFFER, obj->vbo[1]);
-	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * 216, obj->vertex_data, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * 108, obj->color_data, GL_STATIC_DRAW);
 	glEnableVertexAttribArray(1);
 	glBindBuffer(GL_ARRAY_BUFFER, obj->vbo[1]);
-	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void *)4);
-
-//	return(obj);
+	glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 0, (void *)0);
 }

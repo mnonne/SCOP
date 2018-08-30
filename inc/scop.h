@@ -34,6 +34,7 @@ typedef enum 		e_bool
 typedef struct		s_obj
 {
 	float 			*vertex_data;
+	float 			*color_data;
 	unsigned int	vao;
 	unsigned int	vbo[2];
 //	unsigned int	cbo;
@@ -77,7 +78,7 @@ void				check_errors(void);
 /*
 ** load_object.c
 */
-void				*load_object(t_obj *obj);
+void				load_object(t_obj *obj);
 
 /*
 ** shader_program.c
