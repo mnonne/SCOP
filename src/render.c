@@ -84,23 +84,35 @@ void		render_routine(t_scop *scop)
 {
 	glBindVertexArray(0);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
 	glUseProgram(0);
 	glDepthRangef(0.1f, 1000.0f);
 
+	glEnable (GL_DEPTH_TEST);
 	glEnable(GL_CULL_FACE);
+	glCullFace(GL_BACK);
+	glFrontFace(GL_CCW);
 
 	while (scop->is_running == TRUE)
 	{
+
+		scop->mvp_matrix = mat4_mult(scop->camera.proj_mat, scop->camera.view_mat);
+		scop->mvp_matrix = mat4_mult(scop->mvp_matrix, scop->obj.model_mat);
 		/* Render here */
-		glClear(GL_COLOR_BUFFER_BIT);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 		glUseProgram(scop->shader_program);
 		glBindVertexArray(scop->obj.vao);
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, scop->obj.ibo);
+
 		glUniformMatrix4fv(scop->uniform.model, 1, GL_FALSE, &scop->obj.model_mat.f[0]);
 		glUniformMatrix4fv(scop->uniform.projection, 1, GL_FALSE, &scop->camera.proj_mat.f[0]);
 		glUniformMatrix4fv(scop->uniform.view, 1, GL_FALSE, &scop->camera.view_mat.f[0]);
-		glDrawArrays(GL_TRIANGLES, 0, 3 * 12);
-//		check_errors();
+
+		glUniformMatrix4fv(scop->uniform.mvp, 1, GL_FALSE, &scop->mvp_matrix.f[0]);
+//		glDrawArrays(GL_TRIANGLES, 0, 3);
+		glDrawElements(GL_TRIANGLES, scop->obj.ind_count, GL_UNSIGNED_INT, (void *)0);
+
 
 		/* Swap front and back buffers */
 		glfwSwapBuffers(scop->window);

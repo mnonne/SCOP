@@ -31,14 +31,24 @@ typedef enum 		e_bool
 	FALSE
 }					t_bool;
 
+typedef struct		s_arrays
+{
+	float 			*positions;
+	unsigned int	*indices;
+}					t_arrays;
+
 typedef struct		s_obj
 {
-	float 			*vertex_data;
-	float 			*color_data;
+//	float 			*vertex_data;
+//	float 			*color_data;
+	size_t 			v_count;
 	unsigned int	vao;
 	unsigned int	vbo[2];
+	unsigned int	ibo;
 //	unsigned int	cbo;
 	t_mat4			model_mat;
+	int 			pos_count;
+	int				ind_count;
 }					t_obj;
 
 typedef struct		s_camera
@@ -55,6 +65,7 @@ typedef struct 		s_uniform
 	int 			model;
 	int 			view;
 	int 			projection;
+	int 			mvp;
 }					t_uniform;
 
 typedef struct		s_scop
@@ -65,6 +76,7 @@ typedef struct		s_scop
 	t_camera		camera;
 	t_uniform		uniform;
 	t_bool			is_running;
+	t_mat4			mvp_matrix;
 }					t_scop;
 
 /*

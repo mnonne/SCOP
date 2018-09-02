@@ -12,6 +12,8 @@ void	init_camera(t_scop *scop)
 	scop->camera.dir = (t_vec3){0, 0, -10};
 	scop->camera.up = (t_vec3){0, 1, 0};
 	scop->camera.view_mat = mat4_vew(scop->camera.pos, scop->camera.dir, scop->camera.up);
+	scop->mvp_matrix = mat4_mult(scop->camera.proj_mat, scop->camera.view_mat);
+	scop->mvp_matrix = mat4_mult(scop->mvp_matrix, scop->obj.model_mat);
 }
 
 void	init_uniforms(t_scop *scop)
@@ -23,4 +25,6 @@ void	init_uniforms(t_scop *scop)
 	glUniformMatrix4fv(scop->uniform.projection, 1, GL_FALSE, &scop->camera.proj_mat.f[0]);
 	scop->uniform.view = glGetUniformLocation(scop->shader_program, "ViewMatrix");
 	glUniformMatrix4fv(scop->uniform.view, 1, GL_FALSE, &scop->camera.view_mat.f[0]);
+	scop->uniform.mvp = glGetUniformLocation(scop->shader_program, "MVPMatrix");
+	glUniformMatrix4fv(scop->uniform.mvp, 1, GL_FALSE, &scop->mvp_matrix.f[0]);
 }
